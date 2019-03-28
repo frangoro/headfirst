@@ -1,0 +1,3 @@
+1. We have a pizza store that creates a lot of kind of different pizzas and process them in a common way. (Version 1)
+2. Create a factory class with the factory method that get out this code from the store (Version 2)
+3. we want to keep the general process (orderPizza) and allow new stores decide how to prepare, bake, cut... therefore each store extends PizzaStore and override the createPizza method that so each store have its own kind of pizzas which decide how to prepare, bake, cut...
