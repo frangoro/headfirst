@@ -5,7 +5,7 @@ public class ChocolateBoilerSingletonThreadSafeDobleCheckLock {
     private boolean empty;
     private boolean boiled;
 
-    private static ChocolateBoilerSingletonThreadSafeDobleCheckLock instance;
+    private static volatile ChocolateBoilerSingletonThreadSafeDobleCheckLock instance;
 
     private ChocolateBoilerSingletonThreadSafeDobleCheckLock() {
         empty = true;
