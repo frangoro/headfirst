@@ -14,5 +14,10 @@ public class SimpleRemoteControlTest {
         src.setCommand(lightCommand);
         // Invoke the command
         src.buttonWasPressed();
+
+        GarageDoor garageDoor = new GarageDoor();
+        GarageDoorCommand garageDoorCommand = new GarageDoorCommand(garageDoor);
+        src.setCommand(garageDoorCommand);
+        src.buttonWasPressed();
     }
 }
