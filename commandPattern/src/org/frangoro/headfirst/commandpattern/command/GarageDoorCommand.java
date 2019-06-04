@@ -1,3 +1,7 @@
+package org.frangoro.headfirst.commandpattern.command;
+
+import org.frangoro.headfirst.commandpattern.device.GarageDoor;
+
 public class GarageDoorCommand implements Command {
 
     GarageDoor garageDoor;
@@ -9,5 +13,10 @@ public class GarageDoorCommand implements Command {
     @Override
     public void execute() {
         garageDoor.up();
+    }
+
+    @Override
+    public void undo() {
+        garageDoor.down();
     }
 }

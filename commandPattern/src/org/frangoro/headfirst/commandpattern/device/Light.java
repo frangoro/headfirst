@@ -1,3 +1,5 @@
+package org.frangoro.headfirst.commandpattern.device;
+
 /**
  * This is the receiver
  */

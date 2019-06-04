@@ -1,3 +1,11 @@
+package org.frangoro.headfirst.commandpattern.client;
+
+import org.frangoro.headfirst.commandpattern.command.GarageDoorCommand;
+import org.frangoro.headfirst.commandpattern.command.LightCommand;
+import org.frangoro.headfirst.commandpattern.device.GarageDoor;
+import org.frangoro.headfirst.commandpattern.device.Light;
+import org.frangoro.headfirst.commandpattern.invoker.SimpleRemoteControl;
+
 /**
  * This is the client
  */
