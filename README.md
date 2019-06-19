@@ -1,6 +1,11 @@
+## RemoteControl
+Remote Control - Command pattern
+
+## ChocolateFactory
+Chocolate Factory - Singleton pattern
 
 ## Starbuzz
-Decorator pattern
+Starbuzz - Decorator pattern
 
 ## WeatherStation
 Wheather station - Observer pattern
