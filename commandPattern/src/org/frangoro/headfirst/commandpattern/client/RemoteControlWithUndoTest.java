@@ -2,11 +2,9 @@ package org.frangoro.headfirst.commandpattern.client;
 
 import org.frangoro.headfirst.commandpattern.command.*;
 import org.frangoro.headfirst.commandpattern.device.CeilingFan;
-import org.frangoro.headfirst.commandpattern.device.Light;
-import org.frangoro.headfirst.commandpattern.invoker.RemoteControl;
 import org.frangoro.headfirst.commandpattern.invoker.RemoteControlWithUndo;
 
-public class RemoteLoader2 {
+public class RemoteControlWithUndoTest {
 
     public static void main (String args []) {
         // the invoker

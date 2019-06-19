@@ -6,13 +6,13 @@ import org.frangoro.headfirst.commandpattern.command.NoCommand;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class RemoteControl {
+public class RemoteControlWithHistoryUndo {
 
     Command[] onCommands;
     Command[] offCommands;
     Deque<Command> historyCommands;
 
-    public RemoteControl () {
+    public RemoteControlWithHistoryUndo() {
         onCommands = new Command[7];
         offCommands = new Command[7];
        historyCommands = new ArrayDeque<>();
