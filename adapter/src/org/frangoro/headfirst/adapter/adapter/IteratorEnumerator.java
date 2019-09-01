@@ -3,9 +3,9 @@ package org.frangoro.headfirst.adapter.adapter;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-public class IteratorEnumerator implements Enumeration {
+public class IteratorEnumerator implements Enumeration<Object> {
 
-    Iterator iterator;
+    Iterator<?> iterator;
 
     public IteratorEnumerator(Iterator iterator) {
         this.iterator = iterator;
