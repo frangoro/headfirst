@@ -1,12 +1,12 @@
 package org.frangoro.headfirst.iterator;
 
 import org.frangoro.headfirst.iterator.iterator.DinerMenuIterator;
-import org.frangoro.headfirst.iterator.iterator.Iterator;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class DinerMenu {
+public class DinerMenu implements Menu{
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
     MenuItem[] menuItems;
@@ -35,7 +35,7 @@ public class DinerMenu {
         return menuItems;
     }
 
-    public Iterator createIterator() {
+    public Iterator<MenuItem> createIterator() {
         return new DinerMenuIterator(menuItems);
     }
 }

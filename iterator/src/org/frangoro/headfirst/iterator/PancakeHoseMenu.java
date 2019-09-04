@@ -6,7 +6,7 @@ import org.frangoro.headfirst.iterator.iterator.PancakeHouseMenuIterator;
 
 import java.util.ArrayList;
 
-public class PancakeHoseMenu {
+public class PancakeHoseMenu implements Menu{
     ArrayList<MenuItem> menuItems;
 
     public PancakeHoseMenu(){
@@ -27,7 +27,7 @@ public class PancakeHoseMenu {
         return menuItems;
     }
 
-    public org.frangoro.headfirst.iterator.iterator.Iterator createIterator() {
-        return new PancakeHouseMenuIterator(menuItems);
+    public java.util.Iterator<MenuItem> createIterator() {
+        return menuItems.iterator();
     }
 }
