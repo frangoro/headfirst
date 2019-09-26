@@ -1,26 +1,24 @@
 package org.frangoro.headfirst.iterator;
 
 import org.frangoro.headfirst.iterator.iterator.DinerMenuIterator;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Waitress {
 
-    Menu pancakeHoseMenu;
-    Menu dinerMenu;
+    ArrayList<Menu> menus;
 
-    public Waitress(Menu pancakeHoseMenu, Menu dinerMenu) {
-        this.pancakeHoseMenu = pancakeHoseMenu;
-        this.dinerMenu = dinerMenu;
+    public Waitress(ArrayList<Menu> menus) {
+        this.menus = menus;
     }
 
     public void printMenu(){
-        Iterator<MenuItem> dinerMenuIterator = dinerMenu.createIterator();
-        Iterator<MenuItem> pancakeHouseMenuIterator = pancakeHoseMenu.createIterator();
-
-        System.out.println("MENU\n----\nBREAKFAST");
-        printMenu(dinerMenuIterator);
-        System.out.println("\nLUNCH");
-        printMenu(pancakeHouseMenuIterator);
+        Iterator<Menu> menuIterator = menus.iterator();
+        while (menuIterator.hasNext()) {
+            Menu menu = menuIterator.next();
+            printMenu(menu.createIterator());
+        }
     }
 
     private void printMenu(Iterator<MenuItem> it) {
