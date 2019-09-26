@@ -1,6 +1,7 @@
 package org.frangoro.headfirst.iterator;
 
-import org.frangoro.headfirst.iterator.iterator.DinerMenuIterator;
+import org.frangoro.headfirst.iterator.menu.Menu;
+import org.frangoro.headfirst.iterator.menu.MenuItem;
 
 import java.util.ArrayList;
 import java.util.Iterator;

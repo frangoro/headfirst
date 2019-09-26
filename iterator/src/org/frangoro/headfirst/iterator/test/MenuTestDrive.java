@@ -1,4 +1,6 @@
-package org.frangoro.headfirst.iterator;
+package org.frangoro.headfirst.iterator.menu;
+
+import org.frangoro.headfirst.iterator.client.Waitress;
 
 import java.util.ArrayList;
 
