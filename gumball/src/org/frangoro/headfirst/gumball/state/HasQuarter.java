@@ -2,9 +2,12 @@ package org.frangoro.headfirst.gumball.state;
 
 import org.frangoro.headfirst.gumball.GumballMachine;
 
+import java.util.Random;
+
 public class HasQuarter implements State {
 
     GumballMachine gumballMachine;
+    Random randomWinner = new Random(System.currentTimeMillis());
 
     public HasQuarter(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
@@ -24,13 +27,20 @@ public class HasQuarter implements State {
     @Override
     public void turnCrank() {
         System.out.println("Gumball ready!");
-        gumballMachine.setCurrentState(gumballMachine.getSold());
+        if (randomWinner.nextInt(10) == 0 && gumballMachine.getCount() > 1)
+            gumballMachine.setCurrentState(gumballMachine.getWinner());
+        else
+            gumballMachine.setCurrentState(gumballMachine.getSold());
     }
 
     @Override
     public void dispense() {
         System.out.println("No gumball ready to be dispensed");
 
+    }
+
+    @Override
+    public void refill() {
     }
 
     @Override

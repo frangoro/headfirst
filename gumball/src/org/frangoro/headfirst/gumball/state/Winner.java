@@ -2,11 +2,14 @@ package org.frangoro.headfirst.gumball.state;
 
 import org.frangoro.headfirst.gumball.GumballMachine;
 
-public class Sold implements State {
+/*
+10 out of 100 get a free gumball
+ */
+public class Winner implements State {
 
     GumballMachine gumballMachine;
 
-    public Sold(GumballMachine gumballMachine) {
+    public Winner(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
     }
 
@@ -17,7 +20,8 @@ public class Sold implements State {
 
     @Override
     public void ejectQuarter() {
-        System.out.println("It is not able to eject quarter because crank was turned");
+        System.out.println("Gumball was already sold");
+
     }
 
     @Override
@@ -32,7 +36,14 @@ public class Sold implements State {
             System.out.println("Oops, out of gumballs!");
             gumballMachine.setCurrentState(gumballMachine.getSoldOut());
         } else {
-            gumballMachine.setCurrentState(gumballMachine.getNoQuarter());
+            gumballMachine.releaseBall();
+            System.out.println("You are the winner and you get two gumballs");
+            if (gumballMachine.getCount() == 0) {
+                System.out.println("Oops, out of gumballs!");
+                gumballMachine.setCurrentState(gumballMachine.getSoldOut());
+            } else {
+                gumballMachine.setCurrentState(gumballMachine.getNoQuarter());
+            }
         }
     }
 
@@ -42,6 +53,6 @@ public class Sold implements State {
 
     @Override
     public String toString() {
-        return "Sold";
+        return "SoldOut";
     }
 }

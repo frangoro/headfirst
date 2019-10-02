@@ -35,4 +35,8 @@ public class HasNoQuarter implements State {
     public String toString() {
         return "HasNoQuarter";
     }
+
+    @Override
+    public void refill() {
+    }
 }
