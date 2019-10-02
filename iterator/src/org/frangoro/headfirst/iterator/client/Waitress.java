@@ -1,5 +1,6 @@
-package org.frangoro.headfirst.iterator;
+package org.frangoro.headfirst.iterator.client;
 
+import org.frangoro.headfirst.iterator.composite.MenuComponent;
 import org.frangoro.headfirst.iterator.menu.Menu;
 import org.frangoro.headfirst.iterator.menu.MenuItem;
 
@@ -8,26 +9,14 @@ import java.util.Iterator;
 
 public class Waitress {
 
-    ArrayList<Menu> menus;
+    MenuComponent allMenus;
 
-    public Waitress(ArrayList<Menu> menus) {
-        this.menus = menus;
+    public Waitress(MenuComponent allMenus) {
+        this.allMenus = allMenus;
     }
 
     public void printMenu(){
-        Iterator<Menu> menuIterator = menus.iterator();
-        while (menuIterator.hasNext()) {
-            Menu menu = menuIterator.next();
-            printMenu(menu.createIterator());
-        }
+        allMenus.print();
     }
 
-    private void printMenu(Iterator<MenuItem> it) {
-        while (it.hasNext()) {
-            MenuItem menuItem = it.next();
-            System.out.print(menuItem.getName() + ", ");
-            System.out.print(menuItem.getPrice() + " -- ");
-            System.out.println(menuItem.getDescription() + ", ");
-        }
-    }
 }

@@ -1,6 +1,6 @@
 package org.frangoro.headfirst.iterator.iterator;
 
-import org.frangoro.headfirst.iterator.MenuItem;
+import org.frangoro.headfirst.iterator.menu.MenuItem;
 
 public class DinerMenuIterator implements java.util.Iterator {
 

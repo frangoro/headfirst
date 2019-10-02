@@ -1,4 +1,4 @@
-package org.frangoro.headfirst.iterator;
+package org.frangoro.headfirst.iterator.menu;
 
 public class MenuItem {
     String name;

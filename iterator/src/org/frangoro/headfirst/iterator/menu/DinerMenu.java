@@ -1,9 +1,7 @@
-package org.frangoro.headfirst.iterator;
+package org.frangoro.headfirst.iterator.menu;
 
 import org.frangoro.headfirst.iterator.iterator.DinerMenuIterator;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class DinerMenu implements Menu{

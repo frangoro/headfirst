@@ -1,8 +1,4 @@
-package org.frangoro.headfirst.iterator;
-
-import org.frangoro.headfirst.iterator.iterator.DinerMenuIterator;
-import org.frangoro.headfirst.iterator.iterator.Iterator;
-import org.frangoro.headfirst.iterator.iterator.PancakeHouseMenuIterator;
+package org.frangoro.headfirst.iterator.menu;
 
 import java.util.ArrayList;
 
