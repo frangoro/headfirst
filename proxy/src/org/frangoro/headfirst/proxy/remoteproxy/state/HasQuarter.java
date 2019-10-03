@@ -6,8 +6,10 @@ import java.util.Random;
 
 public class HasQuarter implements State {
 
-    GumballMachine gumballMachine;
-    Random randomWinner = new Random(System.currentTimeMillis());
+    private static final long serialVersionUID = 2L;
+
+    transient GumballMachine gumballMachine;
+    transient Random randomWinner = new Random(System.currentTimeMillis());
 
     public HasQuarter(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

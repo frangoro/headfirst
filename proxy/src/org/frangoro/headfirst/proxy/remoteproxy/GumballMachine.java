@@ -2,7 +2,13 @@ package org.frangoro.headfirst.proxy.remoteproxy;
 
 import org.frangoro.headfirst.proxy.remoteproxy.state.*;
 
-public class GumballMachine {
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
+
+    private static final long serialVersionUID = 2L;
 
     String location;
 
@@ -15,7 +21,7 @@ public class GumballMachine {
     State currentState = soldOut;
     int count = 0;
 
-    public GumballMachine(int count, String location) {
+    public GumballMachine(int count, String location) throws RemoteException {
         this.location = location;
         this.count = count;
         // If inventory isn't zero then state is waiting a quarter,
@@ -51,6 +57,7 @@ public class GumballMachine {
         this.currentState = currentState;
     }
 
+    @Override
     public State getCurrentState() {
         return currentState;
     }

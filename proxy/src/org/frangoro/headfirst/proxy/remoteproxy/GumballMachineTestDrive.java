@@ -1,6 +1,9 @@
 package org.frangoro.headfirst.proxy.remoteproxy;
 
 import javax.swing.plaf.IconUIResource;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
 
 public class GumballMachineTestDrive {
 
@@ -16,7 +19,13 @@ public class GumballMachineTestDrive {
         count = Integer.parseInt(args[0]);
         location = args[1];
 
-        GumballMachine gumballMachine = new GumballMachine(count, location);
+        GumballMachineRemote gumballMachine = null;
+        try {
+            gumballMachine = new GumballMachine(count, location);
+            Naming.rebind("//" + location + "/gumballmachine", gumballMachine);
+        } catch (RemoteException | MalformedURLException e) {
+            e.printStackTrace();
+        }
 
         GumballMonitor gumballMonitor = new GumballMonitor(gumballMachine);
         gumballMonitor.report();

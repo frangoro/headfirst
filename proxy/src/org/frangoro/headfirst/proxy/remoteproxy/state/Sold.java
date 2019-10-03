@@ -5,7 +5,9 @@ import org.frangoro.headfirst.proxy.remoteproxy.GumballMachine;
 
 public class Sold implements State {
 
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 2L;
+
+    transient GumballMachine gumballMachine;
 
     public Sold(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
