@@ -3,15 +3,18 @@ package org.frangoro.headfirst.compound;
 public class DuckSimulator {
     public static void main(String[] args) {
         DuckSimulator simulator = new DuckSimulator();
-        simulator.simulate();
+        // Factory to do the creation
+        AbstractDuckFactory factory = new DuckFactory();
+        simulator.simulate(factory);
     }
 
-    void simulate() {
+    void simulate(AbstractDuckFactory factory) {
+
         // Decorte ducks to count quacks
-        Quackable mallardDuck = new QuackCounter(new MallardDuck());
-        Quackable redheadDuck = new QuackCounter(new RedheadDuck());
-        Quackable duckCall = new QuackCounter(new DuckCall());
-        Quackable rubberDuck = new QuackCounter(new RubberDuck());
+        Quackable mallardDuck = factory.createMallardDuck();
+        Quackable redheadDuck = factory.createRedheadDuck();
+        Quackable duckCall = factory.createDuckCall();
+        Quackable rubberDuck = factory.createRubberDuck();
 
         // We want use a goose like a duck
         Quackable goose = new GooseAdapter(new Goose());
