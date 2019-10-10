@@ -1,11 +1,14 @@
 package org.frangoro.headfirst.compound.controller;
-import org.frangoro.headfirst.compound.model.BeatModel;
+import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import java.io.IOException;
 
+import org.frangoro.headfirst.compound.model.BeatModel;
+
+@WebServlet("/djview")
 public class DJViewServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 

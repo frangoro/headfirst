@@ -12,7 +12,7 @@ Beats per minutes = <jsp:getProperty name="beatModel" property="BPM" />
 <hr>
 <br />
 
-<form method="get" action="/djview/servlet/DJViewServlet">
+<form method="get" action="/djview/djview">
 BPM: <input type=text name="bpm"
             value="<jsp:getProperty name='beatModel' property='BPM' />">
 &nbsp;
